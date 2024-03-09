@@ -1,0 +1,24 @@
+*{
+    
+    /*comentário*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+}
+nav{
+    background-color: black;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
+.menu, .submenu{
+    list-style-type: none;
+}
+#logo{
+    font-size: 1.25em;
+}
