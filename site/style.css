@@ -36,6 +36,7 @@ nav a{
 }
 #menu li a{
     padding: 1em;
+    display: block;
 }
 #listras{
     order: 1;
@@ -47,7 +48,52 @@ nav a{
 .item{
     order: 3;
     display: none;
+    width: 100%;
 }
 .active .item{
     display: block;
+}
+.submenu{
+    display: none;
+}
+.submenu-active{
+    background-color: rgb(92, 109, 103);
+}
+.submenu-active .submenu{
+    display: block;
+}
+.tem-submenu > a::after{
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.75em;
+    line-height: 1em;
+    font-weight: 900;
+    content: "\f078";
+    color: #fff;
+    padding-left: 0.3125em;
+}
+@media all and (min-width:960px){
+    #menu{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    #logo{
+        order: 0;
+    }
+    #listras{
+        display: none;
+    }
+    .item{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .submenu-active .submenu{
+        display: block;
+        position: absolute;
+        top: 3em;
+        background-color: black;
+    }
 }
