@@ -48,6 +48,6 @@ nav a{
     order: 3;
     display: none;
 }
-.active.item{
+.active .item{
     display: block;
 }
