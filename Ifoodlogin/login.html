@@ -1,33 +1,20 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - iFood</title>
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Login Ifood</title>
+    
+    
 </head>
 <body>
     <div class="container">
-        <form action="login.php" method="post">
-            <h2>Falta pouco para matar a sua fome</h2>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Entrar</button>
-        </form>
+        <h4>Falta pouco para matar a sua fome</h4>
+        <h2>Como deseja continuar?</h2>
+        <button class="button facebook" onclick="loginWithFacebook()">Entrar com Facebook</button>
+        <button class="button google" onclick="loginWithGoogle()">Entrar com Google</button>
     </div>
-    <!-- Scripts JavaScript (se necessário) -->
-    <script src="scripts.js"></script>
+
+
 </body>
 </html>
-
