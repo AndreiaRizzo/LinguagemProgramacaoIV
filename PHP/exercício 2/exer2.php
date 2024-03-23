@@ -7,20 +7,20 @@
 </head>
 <body>
 <form action="exer2resposta.php" method="post">
-        <label>Informe um valor</label>
-        <input type="number" name="valor1">
-        <label>Informe um valor</label>
-        <input type="number" name="valor2">
-        <label>Informe um valor</label>
-        <input type="number" name="valor3">
-        <label>Informe um valor</label>
-        <input type="number" name="valor4">
-        <label>Informe um valor</label>
-        <input type="number" name="valor5">
-        <label>Informe um valor</label>
-        <input type="number" name="valor6">
-        <label>Informe um valor</label>
-        <input type="number" name="valor7">
+        <label>Informe 7 valores</label><br><br>
+        <input type="number" name="valor1"><br><br>
+        
+        <input type="number" name="valor2"><br><br>
+        
+        <input type="number" name="valor3"><br><br>
+        
+        <input type="number" name="valor4"><br><br>
+        
+        <input type="number" name="valor5"><br><br>
+       
+        <input type="number" name="valor6"><br><br>
+       
+        <input type="number" name="valor7"><br><br>
         <button type="submit">Enviar</button>
     </form>
 </body>

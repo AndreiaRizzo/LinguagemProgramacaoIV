@@ -39,5 +39,5 @@ if ($menor > $valor7){
     $menor = $valor7;
     $pos = "7º";
 }
-    echo "<p> $menor é o menor valor da relação e ocupa a $pos </p>";
+    echo "<p> $menor é o menor valor da relação e ocupa a $pos posição</p>";
    
