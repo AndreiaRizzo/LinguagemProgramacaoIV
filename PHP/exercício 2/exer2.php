@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 2</title>
+    <!--Escreva um programa que leia 7 números diferentes, imprima o menor valor e imprima a posição do 
+menor valor na sequência de entrada.-->
 </head>
 <body>
 <form action="exer2resposta.php" method="post">
