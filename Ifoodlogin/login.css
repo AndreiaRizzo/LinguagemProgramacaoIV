@@ -29,6 +29,21 @@ h2 {
     color: #fff;
 }
 .button.google {
-    background-color: #dd4b39;
-    color: #fff;
+    background-color: #fff;
+    color: black;
 }
+
+body {
+    background-image: url('Ifoodlogin/img/img1.jpg');
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
+    background-position: center; /* Centraliza a imagem */
+    padding: 50px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
+    
+}
+
+.button img {
+        vertical-align: middle; /* Alinha verticalmente a imagem */
+        margin-right: 10px; /* Margem à direita da imagem */
+}
+
+
