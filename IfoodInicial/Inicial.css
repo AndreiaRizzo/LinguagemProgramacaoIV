@@ -1,0 +1,8 @@
+body {
+    background-image: url('Img/groceries-background-mobile.avif');
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
+    background-repeat: no-repeat;
+    background-position: center; /* Centraliza a imagem */
+    padding: 100px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
+    
+}
