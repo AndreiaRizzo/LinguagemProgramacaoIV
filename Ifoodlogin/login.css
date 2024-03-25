@@ -3,8 +3,8 @@ body {
     background-color: #f4f4f4;
 }
 .container {
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
     float: right;
     margin-right: 5%;
@@ -13,6 +13,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 h2 {
+    text-align: center;
+}
+h4 {
     text-align: center;
 }
 .button {
@@ -36,17 +39,14 @@ h2 {
 }
 
 body {
-    background-image: url('img/img1.jpg');
-    background-size: contain; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
+    background-image: url('img/imgfundo.jpg');
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
     background-repeat: no-repeat;
-    background-position: left; /* Centraliza a imagem */
-    padding: 250px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
+    background-position: center; /* Centraliza a imagem */
+    padding: 300px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
     
 }
 
-.button img {
-        vertical-align: middle; /* Alinha verticalmente a imagem */
-        margin-right: 10px; /* Margem à direita da imagem */
-}
+
 
 
