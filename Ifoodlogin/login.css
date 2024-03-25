@@ -3,26 +3,28 @@ body {
     background-color: #f4f4f4;
 }
 .container {
-    max-width: 600px;
+    display: block;
+    max-width: 400px;
     padding: 20px;
     float: right;
-    margin-left: 20%;
-    padding-top: 20%;
-    margin-right: 20%;
-    background-color: #fff;
+    position: relative;
     
+    background-color: #fff; 
+       
     
 }
 
 h2 {
     text-align: center;
-
-}
+    font-size: 40px;
+ }
 h4 {
     text-align: center;
+    font-size: 30px;
 }
+
 .button {
-    display: block;
+    
     width: 100%;
     padding: 10px 15px;
     margin-bottom: 10px;
@@ -41,12 +43,18 @@ h4 {
     color: black;
 }
 
+.button.celular{
+    background-color: #fff;
+    color: black;
+    border: black;
+}
+
 body {
-    /*background-image: url('img/imgfundo.jpg');
+    background-image: url('img/imgfundo.jpg');
     background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
-    /*background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: center; /* Centraliza a imagem */
-    /*padding: 50px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
+    padding: 100px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
     
 }
 
