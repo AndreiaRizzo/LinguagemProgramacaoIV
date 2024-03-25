@@ -17,10 +17,12 @@ body {
 h2 {
     text-align: center;
     font-size: 40px;
+    font-family: 'Lucida Sans';
  }
 h4 {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
+    color: darkgrey;
 }
 
 .button {
@@ -41,12 +43,26 @@ h4 {
 .button.google {
     background-color: #fff;
     color: black;
+    border-width: 1px; /* largura da borda */
+    border-style: solid; /* estilo da borda */
+    border-color: #000; /* cor da borda */
 }
 
 .button.celular{
     background-color: #fff;
-    color: black;
-    border: black;
+    color: black; 
+    width: 40%; 
+    border-width: 1px; /* largura da borda */
+    border-style: solid; /* estilo da borda */
+    border-color: #000; /* cor da borda */ 
+}
+.button.email{
+    background-color: #fff;
+    color: black;  
+    width: 40%; 
+    border-width: 1px; /* largura da borda */
+    border-style: solid; /* estilo da borda */
+    border-color: #000; /* cor da borda */  
 }
 
 body {
