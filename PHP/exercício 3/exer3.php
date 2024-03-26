@@ -9,7 +9,12 @@ iguais, retorne o triplo da soma.-->
 </head>
 <body>
     <form action="exer3resposta.php" method="post";>
-        
+        <label>Informe 2 valores</label><br><br>
+            <input type="number" name="num1"><br><br>
+            
+            <input type="number" name="num2"><br><br>
+            <button type="submit">Enviar</button>
+            
     </form>
 </body>
 </html>
