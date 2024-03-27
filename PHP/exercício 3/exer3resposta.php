@@ -2,15 +2,13 @@
 
 $num1 = $_POST['num1'];
 $num2 = $_POST['num2'];
-$soma = $num1 + $num2
-$somaig = ($num1 + $num2)*3
+$soma = $num1 + $num2;
+$somaig = ($num1 + $num2)*3;
 
 
 if($num1 == $num2)
-    echo "<p>
+    echo $somaig;
     
 
 else 
-    $num1 + $num2;
-
-
+    echo $soma;
