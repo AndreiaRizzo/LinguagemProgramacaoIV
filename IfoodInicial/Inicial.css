@@ -1,8 +1,108 @@
-body {
-    background-image: url('Img/groceries-background-mobile.avif');
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
-    background-repeat: no-repeat;
-    background-position: center; /* Centraliza a imagem */
-    padding: 100px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
+*{
     
+    /*comentário*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+}
+nav{
+    background-color: rgb(209, 204, 204);
+}
+nav a{
+    color: black;
+    text-decoration: none;
+}
+.item red{
+    color: red;
+}
+
+.menu, .submenu{
+    list-style-type: none;
+}
+#logo {
+    max-width: 20% /* Define a largura máxima do logo */
+    }
+
+#logo img {
+    width: 100%; /* Ajusta a largura da imagem para ocupar todo o espaço disponível */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.item.button{
+    background-color: red;
+}
+.item:not(.button) a:hover{
+    color: darkgray;
+}
+#menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#menu li a{
+    padding: 1em;
+    display: block;
+}
+#listras{
+    order: 1;
+    font-size: 1.25em;
+}
+.item.button{
+    order: 2;
+}
+.item{
+    order: 3;
+    display: none;
+    width: 100%;
+}
+.active .item{
+    display: block;
+}
+.submenu{
+    display: none;
+}
+.submenu-active{
+    background-color: rgb(92, 109, 103);
+}
+.submenu-active .submenu{
+    display: block;
+}
+.tem-submenu > a::after{
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.75em;
+    line-height: 1em;
+    font-weight: 900;
+    content: "\f078";
+    color: #fff;
+    padding-left: 0.3125em;
+}
+@media all and (min-width:960px){
+    #menu{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    #logo{
+        order: 0;
+    }
+    #listras{
+        display: none;
+    }
+    .item{
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .submenu-active .submenu{
+        display: block;
+        position: absolute;
+        top: 3em;
+        background-color: black;
+    }
 }
