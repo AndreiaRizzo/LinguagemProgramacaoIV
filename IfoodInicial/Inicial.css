@@ -60,24 +60,8 @@ nav a{
 .active .item{
     display: block;
 }
-.submenu{
-    display: none;
-}
-.submenu-active{
-    background-color: rgb(92, 109, 103);
-}
-.submenu-active .submenu{
-    display: block;
-}
-.tem-submenu > a::after{
-    font-family: "Font Awesome 5 Free";
-    font-size: 0.75em;
-    line-height: 1em;
-    font-weight: 900;
-    content: "\f078";
-    color: #fff;
-    padding-left: 0.3125em;
-}
+
+
 @media all and (min-width:960px){
     #menu{
         display: flex;
