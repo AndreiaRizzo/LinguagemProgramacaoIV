@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    margin: 0 auto;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.hero{
+    height: 80%;
+    max-height: 520px;
+    background: rgba(192, 185, 185, 0.753);
+}
+.header{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 45px;
+    
+}
+.header ul{
+    display: flex;
+    align-items: center;
+}
+.header ul li{
+    list-style: none;
+    margin: 0 50px;
+}
+.header.esq{
+    text-align: left;
+}
