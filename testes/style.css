@@ -108,12 +108,13 @@ body {
     width: 100%;
     max-width: 500px;
     display: flex;
+
 }
 .form .lupa{
     width:100%;
     max-width: 450px;
     min-width: 350px;
-    background:white;
+    background:rgba(226, 220, 220, 0.753);;
     height: 50px;
     border-radius: 4px;
     margin-right: 30px;
@@ -123,10 +124,12 @@ body {
 }
 
 .form .lupa img{
-    width: 5%;
-    margin:0 20px;
+    width: 20%;
+    height:100%;
+    margin:1px 20px;
+    
 }
-.form .lupa input{
+.form .lupa input {
     width:100%;
     background: transparent;
     border: 0;
@@ -137,7 +140,7 @@ body {
     font-weight: 350;
     color: black;
 }
-.form button{
+.form button {
     width: 210px;
     background-color: red;
     height:50px;
@@ -145,4 +148,17 @@ body {
     font-weight: 350;
     border: 0;
     border-radius: 4px;
+}
+.tags {
+    margin: 30px 0;
+    display: flex;
+}
+.tags spam {
+    font-size: 1rem;
+    font-weight: 300;
+    color: gray;
+    border: 1px;
+    border-radius: 2px;
+    padding: 4px
+
 }
