@@ -1,36 +1,86 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
+body {
+    height: 80vh;
     margin: 0 auto;
     font-family: Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
-.container{
-    width: 100%;
-    height: 100%;
+
+.container {
+    width: auto;
+    height: auto;
+
 }
-.hero{
-    height: 80%;
-    max-height: 520px;
-    background: rgba(192, 185, 185, 0.753);
-}
-.header{
+
+.header {
     display: flex;
     justify-content: flex-end;
-    margin: 0 45px;
-    
+    position: fixed; /* Fixa o header na parte superior da página */
+    top: 0; /* Define a posição do topo da div como o topo da página */
+    z-index:1000;
+    white-space: nowrap;
+    background: rgba(226, 220, 220, 0.753);
+    padding: 10px;
+
 }
-.header ul{
+
+.dir ul {
     display: flex;
     align-items: center;
 }
-.header ul li{
+
+.dir ul li {
     list-style: none;
-    margin: 0 50px;
+    margin: 10px 20px;
+    color: black;
 }
-.header.esq{
-    text-align: left;
+
+.dir ul li a {
+    text-decoration: none;
+    color: red;
+}
+
+.esq ul {
+    display: flex;
+    align-items: center;
+
+}
+
+.esq ul li {
+    list-style: none;
+    margin: 10px 50px;
+    color: black;
+}
+
+.esq ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.header img {
+    width: 10%;
+    height: auto;
+}
+
+.button :last-child {
+    background-color: red;
+    padding: 15px 45px;
+    margin: 0 0 0 5px;
+    border-radius: 10%;
+    border: 1px solid red;
+    color: black;
+}
+
+.mer {
+
+    background-image: url('img/groceries-background-mobile.avif');
+    background-size: cover;    /* Faz a imagem cobrir toda a área da div */
+    background-repeat: no-repeat;
+    background-position: center;    /* Centraliza a imagem */
+    position: relative;
+    margin-top:90px;
+
 }
