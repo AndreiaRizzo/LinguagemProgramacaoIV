@@ -26,6 +26,12 @@ body {
     padding: 10px;
 
 }
+#listras {
+    order: 1;
+    font-size: 1.25em;
+    text-decoration: none;
+    list-style: none;
+}
 
 .dir ul {
     display: flex;
@@ -93,14 +99,14 @@ body {
 }
 .mer h1{
     font-size: 2.5rem;
-    font weight: 600;
+    
     margin:20 px 0;
     margin-top: 120px;
 
 }
 .mer h4{
     font-size: 1.25rem;
-    font weight: 100;
+
     color: gray;
 }
 .form{
@@ -183,12 +189,10 @@ body {
 }
 .op {
     width: 1000px;
-    margin: 30px 0;
-    max-width:;
+    margin: 30px 150px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px 50px;
+    padding: 30px 30px;
     border-radius: 4px;
     
 }
@@ -205,6 +209,7 @@ body {
     border: 1px solid rgba(226, 220, 220, 0.753);
     border-radius: 10px;
     position: relative;
+    height: 200px;
 }
 .rest button {
     width: auto;
@@ -236,6 +241,7 @@ body {
     border: 1px solid rgba(226, 220, 220, 0.753);
     border-radius: 10px;
     position: relative;
+    height: 200px;
 }
 .merca button {
     width: auto;
@@ -251,3 +257,34 @@ body {
     position: absolute;
 }
 
+@media all and (min-width:960px){
+    .header{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .header img{
+        order: 0;
+    }
+    #listras{
+        display: none;
+    }
+    .mer{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .op{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .banner{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
