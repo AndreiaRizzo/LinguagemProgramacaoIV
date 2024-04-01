@@ -180,7 +180,6 @@ body {
 }
 .banner img:hover {
     transform: scale(1.1);
-
 }
 .op {
     width: 1000px;
@@ -191,29 +190,64 @@ body {
     justify-content: center;
     padding: 10px 50px;
     border-radius: 4px;
+    
 }
 .op .rest {
-    font-size: 1rem;
-    font-weight: 300;
-    color: white;
+    display: flex;
+    width:50%;
+    font-size: 2rem;
+    font-weight: 300;   
     background-color: red;
     border: 1px;
     border-radius: 10px;
-    margin: 10px 15px;
-    margin-right: 50px; /* Espaçamento entre os spans */
-    margin-bottom: 10px; /* Espaçamento entre as linhas */
-    padding: 5px 10px;
+    margin: 0 10px;
+    padding: 10px;
     border: 1px solid rgba(226, 220, 220, 0.753);
     border-radius: 10px;
+    position: relative;
 }
 .rest button {
-    width: 210px;
-    background-color:rgb(255, 0, 0);
+    width: auto;
+    background-color:#FF7F50;
     height:25px;
-    weight:15px;
     color: white;
     font-weight: 350;
     border: 1px solid;
     border-radius: 4px;
     cursor: pointer;
+    left: 10px;
+    bottom: 10px;
+    position: absolute;
 }
+.op h4{
+    color: white;   
+    left: 10px;
+}
+.op .merca {
+    display: flex;
+    width:50%;
+    font-size: 2rem;
+    font-weight: 300;   
+    background-color: #228B22;
+    border: 1px;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid rgba(226, 220, 220, 0.753);
+    border-radius: 10px;
+    position: relative;
+}
+.merca button {
+    width: auto;
+    background-color:#7FFF00;
+    height:25px;
+    color: white;
+    font-weight: 350;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    left: 10px;
+    bottom: 10px;
+    position: absolute;
+}
+
