@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 
 .header {
     display: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: fixed; /* Fixa o header na parte superior da página */
     top: 0; /* Define a posição do topo da div como o topo da página */
     z-index:1000;
@@ -26,6 +27,7 @@ body {
     padding: 10px;
     flex-wrap: wrap;
     align-items: baseline;
+
 }
 
 .item{
@@ -59,6 +61,7 @@ body {
     color: red;
 }
 
+
 .esq ul {
     display: flex;
     align-items: center;
@@ -88,6 +91,11 @@ body {
     border-radius: 15%;
     border: 1px solid red;
     color: white;
+    cursor: pointer;
+    
+}
+.dir .button :hover{
+    background-color: rgb(226, 114, 114); /* Altera a cor de fundo ao passar o mouse */
 }
 
 .mer {
@@ -123,12 +131,13 @@ body {
     width: 100%;
     max-width: 500px;
     display: flex;
+    flex-wrap: wrap;
 
 }
 .form .lupa{
     width:100%;
-    max-width: 450px;
-    min-width: 350px;
+    max-width: 300px;
+    margin-bottom: 10px;
     background:rgba(226, 220, 220, 0.753);
     height: 50px;
     border-radius: 4px;
@@ -145,11 +154,11 @@ body {
     
 }
 .form .lupa input {
-    width:100%;
+    width:60%;
     background: transparent;
     border: 0;
     outline: none;
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 .form .lupa input::placeholder{
     font-weight: 350;
@@ -163,6 +172,7 @@ body {
     font-weight: 350;
     border: 0;
     border-radius: 4px;
+    cursor: pointer;
 }
 .tags {
     margin: 30px 0;
@@ -188,6 +198,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
+    flex-wrap: wrap;
 }
 .banner img {
     width: 100%;
@@ -304,5 +315,8 @@ body {
 
     .item{
     display: block;
+    order: 1;
+    position: relative;
+    width: auto;
 }
 }
