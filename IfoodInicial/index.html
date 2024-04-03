@@ -13,11 +13,11 @@
       <div class="header">
         <img src="img/ifood-43.svg" />
         <div class="esq">
-          <ul>
-            <li><a href="#">Entregador</a></li>
-            <li><a href="#">Restaurante e Mercado</a></li>
-            <li><a href="#">Carreiras</a></li>
-            <li><a href="#">Ifood Card</a></li>
+          <ul id="menu">
+            <li class="item"><a href="#">Entregador</a></li>
+            <li class="item"><a href="#">Restaurante e Mercado</a></li>
+            <li class="item"><a href="#">Carreiras</a></li>
+            <li class="item"><a href="#">Ifood Card</a></li>
           </ul>
         </div>
         <div class="dir">
@@ -80,5 +80,25 @@
     <main></main>
     <footer></footer>
     <script src="script.js"></script>
+    <script>
+      let listras = document.querySelector("#listras");
+let menu = document.querySelector("#menu");
+let itens = document.querySelectorAll(".item");/*pega todas as li que tem no item*/
+
+function abrirMenu(){
+    if (menu.classList.contains("active")){
+        menu.classList.remove("active");
+        listras.querySelector("a").innerHTML = 
+            "<i class= 'fas fa-bars'></i>";
+    }
+   
+    else{
+        menu.classList.add("active");
+        listras.querySelector("a").innerHTML = 
+            "<i class= 'fas fa-times'></i>";
+    }
+}
+listras.addEventListener("click", abrirMenu);
+    </script>
   </body>
 </html>

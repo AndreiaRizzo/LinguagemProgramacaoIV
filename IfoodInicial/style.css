@@ -16,7 +16,7 @@ body {
 }
 
 .header {
-    display: flex;
+    display: 100%;
     justify-content: flex-end;
     position: fixed; /* Fixa o header na parte superior da página */
     top: 0; /* Define a posição do topo da div como o topo da página */
@@ -24,8 +24,18 @@ body {
     white-space: nowrap;
     background: rgba(226, 220, 220, 0.753);
     padding: 10px;
-
+    flex-wrap: wrap;
+    align-items: baseline;
 }
+
+.item{
+    display: none;
+}
+
+.active .item{
+    display: block;
+}
+
 #listras {
     order: 1;
     font-size: 1.25em;
@@ -194,6 +204,9 @@ body {
     align-items: center;
     padding: 30px 30px;
     border-radius: 4px;
+    object-fit: fill;
+    display: flex;
+    flex-wrap: wrap;
     
 }
 .op .rest {
@@ -288,4 +301,8 @@ body {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+
+    .item{
+    display: block;
+}
 }
