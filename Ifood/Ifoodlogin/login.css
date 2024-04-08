@@ -6,11 +6,21 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    padding: 20px;
+    padding: 30px;
     float: right;
-    position: relative;
-    
+    position: relative;    
     background-color: #fff;  
+    top: 30px;
+    right: 30px;
+}
+
+.fundo img{
+    display: flex;
+    float: left;   
+    border-top-right-radius: 40%; /* Raio de arredondamento na borda superior direita */
+    border-bottom-right-radius: 40%; /* Raio de arredondamento na borda inferior direita */
+    position: relative;  
+    object-fit: cover;
 }
 
 h2 {
@@ -25,7 +35,7 @@ h4 {
 }
 
 .button {
-    
+   
     width: 90%;
     padding: 10px 15px;
     margin-bottom: 10px;
@@ -38,6 +48,16 @@ h4 {
 .button.facebook {
     background-color: #3b5998;
     color: #fff;
+    align-items: center;
+}
+.button.facebook img{
+    width: 8%;
+    margin-right: 50px;
+    border-radius: none;  
+}
+.button.google img{
+    width: 5%;
+    margin-right: 50px;
 }
 .button.google {
     background-color: #fff;
@@ -64,15 +84,21 @@ h4 {
     border-color: #000; /* cor da borda */  
 }
 
-body {
-    background-image: url('img/imgfundo.jpg');
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o espaço disponível */
-    background-repeat: no-repeat;
-    background-position: center; /* Centraliza a imagem */
-    padding: 100px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas da imagem */
-    
-}
+@media all and (max-width: 768px) {
+    h2 {
+        font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+    }
 
+    h4 {
+        font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+    .fundo {
+        max-width: 100%;
+    }
+    .button {
+        max-width: 100%;
+    }
+}
 
 
 
