@@ -17,10 +17,105 @@ body {
     font-size: 1em;
 }
 
-nav a {
-    color: #b35d5d;
-    text-decoration: none;
+nav ul {
+    display: flex;
+    justify-content: space-between;
 }
+
+nav ul li {
+    margin-right: 40px;
+}
+
+nav ul li a {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5vw;
+    padding: 1rem 0;
+    white-space: nowrap;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+  
+  nav ul li .submenu {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  nav ul li .submenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav ul li:hover .submenu {
+    display: block;
+  }
+  
+  nav ul li .submenu a:hover {
+    background-color: #cbcbcb;
+    border-radius: 5px;
+  }
+  
+  nav ul li .submenu a::after {
+    display: none;
+  }
+  
+.topo {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: 1vw 0px 3vw 0px;
+    align-self: flex-end;
+    max-width: 1200px;
+    list-style-type: none;
+}
+.logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-01,
+   {
+    background-color: #ffffff;
+    color: #eb0033;
+    padding: 14px 27px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2vw;
+    font-family: "arial";
+    white-space: nowrap;
+  }
+  
+  .button-01:hover {
+    background-color: #faedee;
+    transition: 0.3s;
+  }
+  
 
 .menu,
 .submenu {
@@ -28,7 +123,7 @@ nav a {
 }
 
 .logo img {
-    width: 10%;
+    width: 88px;
 }
 
 .item.button:hover {
