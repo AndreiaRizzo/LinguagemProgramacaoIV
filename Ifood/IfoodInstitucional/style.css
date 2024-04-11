@@ -24,6 +24,7 @@ nav ul {
 
 nav ul li {
     margin-right: 40px;
+    list-style: none;
 }
 
 nav ul li a {
@@ -34,6 +35,7 @@ nav ul li a {
     font-size: 1.5vw;
     padding: 1rem 0;
     white-space: nowrap;
+    
 }
 
 nav ul li a::after {
@@ -116,7 +118,10 @@ nav ul li a:hover::after {
     transition: 0.3s;
   }
   
-
+  .topo button {
+    display: flex;
+    margin-left: auto;
+  }
 .menu,
 .submenu {
     list-style-type: none;
