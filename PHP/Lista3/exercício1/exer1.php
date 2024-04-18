@@ -15,7 +15,7 @@ Armazene estes dados em um mapa ordenado. Ao final do programa mostrar a média 
 <body>
     <form action="exer1resposta.php" method="post">
         <?php
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             echo '<labe> Digite o nome do aluno: </label><br>';
             echo '<input type="name" name="aluno[]"><br>';
             echo '<labe> Digite a nota do aluno: </label><br>';
