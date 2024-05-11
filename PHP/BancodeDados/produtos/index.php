@@ -23,7 +23,7 @@ require_once("../cabecalho.html");
             <td>Livros</td>
             <td>
                 <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
-                <a href="alterar_produto.php" class="btn btn-danger">Excluir</a>
+                <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         <tr>
