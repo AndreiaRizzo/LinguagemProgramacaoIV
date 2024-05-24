@@ -16,37 +16,23 @@ require_once("../cabecalho.php");
             </tr>
         </thead>
         <tbody>
+            <?php
+                $linhas = retornarProdutos();
+                while ($l = $linhas->fetch (PDO::FETCH_ASSOC)){ 
+            ?>
             <tr>
-                <td>Persuasão</td>
-                <td>Livro de Jane Austen</td>
-                <td>R$ 10,00</td>
-                <td>Livros</td>
+                <td><?= $l['nome'] ?></td>
+                <td><?= $l['descricao'] ?></td>
+                <td><?= $l['valor'] ?></td>
+                <td><?= $l['categoria'] ?></td>
                 <td>
                     <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
                     <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
-            <tr>
-                <td>Macarrão Liane</td>
-                <td>Macarrão de Semolina</td>
-                <td>R$ 3,00</td>
-                <td>Pereciveis</td>
-                <td>
-                    <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
-                    <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Oculos de Natação</td>
-                <td>Infantil</td>
-                <td>R$ 25,00</td>
-                <td>Material Esportivo</td>
-                <td>
-                    <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
-                    <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-
+            <?php
+                }
+            ?>
         </tbody>
 
     </table>

@@ -1,0 +1,172 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema central_de_vagas
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema central_de_vagas
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `central_de_vagas` DEFAULT CHARACTER SET utf8mb4 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+  `cpfUsuario` INT NOT NULL,
+  `senha` INT NOT NULL,
+  `nome` VARCHAR(90) NOT NULL,
+  `email` VARCHAR(90) NOT NULL,
+  PRIMARY KEY (`cpfUsuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Aluno` (
+  `cpfAluno` INT NOT NULL,
+  `nome` VARCHAR(90) NOT NULL,
+  `dtNasc` DATE NOT NULL,
+  `sexo` ENUM('M', 'F') NOT NULL,
+  `rua` VARCHAR(45) NOT NULL,
+  `num` INT NOT NULL,
+  `cidade` VARCHAR(45) NOT NULL,
+  `estado` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(90) NOT NULL,
+  `nomeResp` VARCHAR(90) NOT NULL,
+  `celResp` INT NOT NULL,
+  PRIMARY KEY (`cpfAluno`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Cursos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Cursos` (
+  `idCurso` INT NOT NULL,
+  `nomeCur` VARCHAR(45) NOT NULL,
+  `diaCur` VARCHAR(45) NOT NULL,
+  `periodoCur` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCurso`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Cadastro`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Cadastro` (
+  `idCadastro` INT NOT NULL,
+  `dtCadastro` DATE NOT NULL,
+  `Usuario_cpfUsuario` INT NOT NULL,
+  `Aluno_cpfAluno` INT NOT NULL,
+  `Cursos_idCurso` INT NOT NULL,
+  PRIMARY KEY (`idCadastro`),
+  INDEX `fk_Cadastro_Usuario_idx` (`Usuario_cpfUsuario` ASC) VISIBLE,
+  INDEX `fk_Cadastro_Aluno1_idx` (`Aluno_cpfAluno` ASC) VISIBLE,
+  INDEX `fk_Cadastro_Cursos1_idx` (`Cursos_idCurso` ASC) VISIBLE,
+  CONSTRAINT `fk_Cadastro_Usuario`
+    FOREIGN KEY (`Usuario_cpfUsuario`)
+    REFERENCES `mydb`.`Usuario` (`cpfUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Cadastro_Aluno1`
+    FOREIGN KEY (`Aluno_cpfAluno`)
+    REFERENCES `mydb`.`Aluno` (`cpfAluno`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Cadastro_Cursos1`
+    FOREIGN KEY (`Cursos_idCurso`)
+    REFERENCES `mydb`.`Cursos` (`idCurso`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `central_de_vagas` ;
+
+-- -----------------------------------------------------
+-- Table `central_de_vagas`.`aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `central_de_vagas`.`aluno` (
+  `cpf_al` INT(11) NOT NULL,
+  `nome_alu` VARCHAR(30) NOT NULL,
+  `dt_nasc` DATE NULL DEFAULT NULL,
+  `sexo` ENUM('M', 'F') NULL DEFAULT NULL,
+  `rua` VARCHAR(30) NULL DEFAULT NULL,
+  `num` INT(11) NULL DEFAULT NULL,
+  `cidade` VARCHAR(20) NULL DEFAULT NULL,
+  `estado` VARCHAR(20) NULL DEFAULT NULL,
+  `email` VARCHAR(20) NULL DEFAULT NULL,
+  `nome_resp` VARCHAR(30) NULL DEFAULT NULL,
+  `cel` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`cpf_al`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `central_de_vagas`.`cursos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `central_de_vagas`.`cursos` (
+  `cd_cur` VARCHAR(10) NOT NULL,
+  `nome_cur` VARCHAR(20) NULL DEFAULT NULL,
+  `dia_cur` VARCHAR(20) NULL DEFAULT NULL,
+  `periodo_cur` VARCHAR(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`cd_cur`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `central_de_vagas`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `central_de_vagas`.`usuario` (
+  `cpf_us` INT(11) NOT NULL,
+  `senha` INT(11) NOT NULL,
+  PRIMARY KEY (`cpf_us`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `central_de_vagas`.`cadastro`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `central_de_vagas`.`cadastro` (
+  `cd_cad` INT(11) NOT NULL AUTO_INCREMENT,
+  `cpf_al` INT(11) NULL DEFAULT NULL,
+  `cd_cur` VARCHAR(10) NULL DEFAULT NULL,
+  `cpf_us` INT(11) NULL DEFAULT NULL,
+  `dt_cad` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`cd_cad`),
+  INDEX `cpf_al` (`cpf_al` ASC),
+  INDEX `cd_cur` (`cd_cur` ASC),
+  INDEX `cpf_us` (`cpf_us` ASC),
+  CONSTRAINT `cadastro_ibfk_1`
+    FOREIGN KEY (`cpf_al`)
+    REFERENCES `central_de_vagas`.`aluno` (`cpf_al`),
+  CONSTRAINT `cadastro_ibfk_2`
+    FOREIGN KEY (`cd_cur`)
+    REFERENCES `central_de_vagas`.`cursos` (`cd_cur`),
+  CONSTRAINT `cadastro_ibfk_3`
+    FOREIGN KEY (`cpf_us`)
+    REFERENCES `central_de_vagas`.`usuario` (`cpf_us`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
