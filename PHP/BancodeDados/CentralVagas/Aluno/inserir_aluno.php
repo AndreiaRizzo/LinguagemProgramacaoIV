@@ -1,5 +1,6 @@
 <?php
     require_once("../cabecalho.php");
+    require_once("../index.php");
 ?>
     <h3>Dados Pessoais</h3>
     <form action="" method="POST">
@@ -7,6 +8,24 @@
             <div class="col">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" class="form-control" name="nome">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="cpfAluno" class="form-label">CPF</label>
+                <input type="text" class="form-control" name="cpfAluno">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="dt_nasc" class="form-label">Data Nascimento</label>
+                <input type="date" class="form-control" name="dt_nasc">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="text" class="form-control" name="idade">
             </div>
         </div>
         <div class="row">
@@ -39,18 +58,7 @@
                 <input type="text" class="form-control" name="estado">
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="dt_nasc" class="form-label">Data Nascimento</label>
-                <input type="date" class="form-control" name="dt_nasc">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label for="idade" class="form-label">Idade</label>
-                <input type="text" class="form-control" name="idade">
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col">
                 <label for="email" class="form-label">Email</label>
@@ -59,14 +67,14 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="respon" class="form-label">Nome do responsável</label>
-                <input type="text" class="form-control" name="respon">
+                <label for="nomeResp" class="form-label">Nome do responsável</label>
+                <input type="text" class="form-control" name="nomeResp">
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="fone" class="form-label">Celular</label>
-                <input type="text" class="form-control" name="fone">
+                <label for="celResp" class="form-label">Celular</label>
+                <input type="text" class="form-control" name="celResp">
             </div>
         </div>
         <div class="row">
@@ -77,5 +85,5 @@
     </form>
 
 
-
-    require_once("../rodape.html");
+<?php
+    require_once("../rodape.php");

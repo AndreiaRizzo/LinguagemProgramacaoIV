@@ -16,10 +16,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">              
               <li class="nav-item">
-                <a class="nav-link" href="produtos/index.php">Produtos</a>
+                <a class="nav-link" href="produtos/index.php"></a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <main class="container">
+<?php
+
+  require_once('funcao.php');
