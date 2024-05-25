@@ -25,9 +25,13 @@ require_once("../cabecalho.php");
                 <td><?= $l['descricao'] ?></td>
                 <td><?= $l['valor'] ?></td>
                 <td><?= $l['categoria'] ?></td>
-                <td>
-                    <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
-                    <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
+                <<td>
+                    <a href="alterar_produto.php?id=<?= $l['id'] ?>" class="btn btn-warning">
+                        Alterar
+                    </a>
+                    <a href="excluir_produto.php?id=<?= $l['id'] ?>" class="btn btn-danger">
+                        Excluir
+                    </a>
                 </td>
             </tr>
             <?php
