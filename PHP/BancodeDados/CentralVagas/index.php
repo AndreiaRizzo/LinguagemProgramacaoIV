@@ -42,7 +42,7 @@
         }
 
         .container {
-
+                
             padding: 20px;
             border-radius: 10px;
             /* Bordas arredondadas */
@@ -53,11 +53,15 @@
             margin-right: auto; /* Alinha ao centro */
             text-align: center; /* Alinha o texto ao centro */
         }
+        .container a {
+            word-spacing: 10px; /* Espaçamento entre palavras */
+        }
 
 
-        h2 {
+        h1 {
             text-align: center;
             margin-top: 20px;
+            color: white;
             
         }
 

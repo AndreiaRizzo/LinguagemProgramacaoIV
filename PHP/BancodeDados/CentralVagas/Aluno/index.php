@@ -5,7 +5,7 @@ require_once("../index.php");
 
 
 
-    <h2>ESCOLHA A OPÇÃO DESEJADA</h2>
+    <h1>ESCOLHA A OPÇÃO DESEJADA</h1>
 
     <div class="container mt-3">
         <a href="inserir_aluno.php" class="btn btn-outline-primary mt-3">CADASTRAR ALUNO </a>
@@ -18,7 +18,7 @@ require_once("../index.php");
         <a href="lista.php" class="btn btn-outline-primary mt-3">LISTA DE ESPERA CURSOS NOVOS </a>
         
     </div>
-    <table class=" table ">
+    <table class=" table table-borderless">
         <thead>
             <tr>
                 <th>Nome</th>
