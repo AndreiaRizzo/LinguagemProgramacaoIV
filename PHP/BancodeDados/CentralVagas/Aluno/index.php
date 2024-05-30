@@ -9,13 +9,14 @@ require_once("../index.php");
 
     <div class="container mt-3">
         <a href="inserir_aluno.php" class="btn btn-outline-primary mt-3">CADASTRAR ALUNO </a>
-        <a href="lista.php" class="btn btn-outline-primary mt-3">CONCLUIR MATRÍCULA </a>
+        
 
     </div>
 
     <div class="container mt-3">
         <a href="lista.php" class="btn btn-outline-primary mt-3">LISTA DE ESPERA CURSOS OFERECIDOS </a>
         <a href="lista.php" class="btn btn-outline-primary mt-3">LISTA DE ESPERA CURSOS NOVOS </a>
+        
         
     </div>
     <table class=" table table-borderless">
@@ -33,12 +34,15 @@ require_once("../index.php");
                 <tr>
                     <td><?= $l['nome'] ?></td>
                     <td><?= $l['cpfAluno'] ?></td>
-                    <<td>
+                    <td>
                         <a href="alterar_dados.php?id=<?= $l['cpfAluno'] ?>" class="btn btn-primary">
                             Alterar
                         </a>
                         <a href="excluir_aluno.php?id=<?= $l['cpfAluno'] ?>" class="btn btn-primary">
                             Excluir
+                        </a>
+                        <a href="excluir_aluno.php?id=<?= $l['cpfAluno'] ?>" class="btn btn-primary">
+                            Concluir Matrícula
                         </a>
                         </td>
                 </tr>

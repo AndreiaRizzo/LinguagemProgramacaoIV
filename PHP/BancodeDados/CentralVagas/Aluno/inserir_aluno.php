@@ -1,89 +1,99 @@
 <?php
-    require_once("../cabecalho.php");
-    require_once("../index.php");
+require_once("../cabecalho.php");
+require_once("../index.php");
 ?>
-    <h3>Dados Pessoais</h3>
-    <form action="" method="POST">
-        <div class="row">
-            <div class="col">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome">
+<h3>Dados Pessoais</h3>
+<form action="" method="POST">
+
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome aluno(a)">
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="M" name="optradio" value="Masculino">
+                <label class="form-check-label" for="M">M</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="F" name="optradio" value="Feminino">
+                <label class="form-check-label" for="F">F</label>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="cpfAluno" class="form-label">CPF</label>
-                <input type="text" class="form-control" name="cpfAluno">
-            </div>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="cpfAluno" id="cpfAluno" placeholder="CPF Aluno">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="dt_nasc" class="form-label">Data Nascimento</label>
-                <input type="date" class="form-control" name="dt_nasc">
-            </div>
+        <div class="col">
+            <input type="text" class="form-control" name="email" id="email" placeholder="Email">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="idade" class="form-label">Idade</label>
-                <input type="text" class="form-control" name="idade">
-            </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label for="dt_nasc" class="form-label">Data Nascimento</label>
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="sexo" class="form-label">Sexo</label>
-                <input type="radio" class="form-control" name="sexo">
-            </div>
+        <div class="col">
+            <input type="date" class="form-control" name="dt_nasc">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="rua" class="form-label">Rua/Av</label>
-                <input type="text" class="form-control" name="rua">
-            </div>
+        <div class="col">
+            <select class="form-select" name="idade" id="idade">
+                <option value="">Selecione a idade</option>
+                <option value="6">6 anos</option>
+                <option value="7">7 anos</option>
+                <option value="8">8 anos</option>
+                <option value="9">9 anos</option>
+                <option value="10">10 anos</option>
+                <option value="11">11 anos</option>
+                <option value="12">12 anos</option>
+                <option value="13">13 anos</option>
+                <option value="14">14 anos</option>
+                <option value="15">15 anos</option>
+                <option value="16">16 anos</option>
+                <option value="17">17 anos</option>
+                <option value="18">18 anos</option>
+            </select>
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="num" class="form-label">Núm</label>
-                <input type="text" class="form-control" name="num">
-            </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="rua" id="rua" placeholder="Rua/Av">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="cidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="cidade">
-            </div>
+        <div class="col">
+            <input type="text" class="form-control" name="num" id="num" placeholder="Número">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="estado" class="form-label">Estado</label>
-                <input type="text" class="form-control" name="estado">
-            </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" name="email">
-            </div>
+        <div class="col">
+            <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="nomeResp" class="form-label">Nome do responsável</label>
-                <input type="text" class="form-control" name="nomeResp">
-            </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" class="form-control" name="nomeResp" id="nomeResp" placeholder="Nome do Responsável">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="celResp" class="form-label">Celular</label>
-                <input type="text" class="form-control" name="celResp">
-            </div>
+
+        <div class="col">
+            <input type="text" class="form-control" name="celResp" id="celResp" placeholder="Celular Responsável">
         </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-success mt-3">Salvar</button>
-            </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <button type="submit" class="btn btn-success mt-3">Salvar</button>
         </div>
-    </form>
+    </div>
+</form>
 
 
 <?php
-    require_once("../rodape.php");
+require_once("../rodape.php");

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -42,27 +40,35 @@
         }
 
         .container {
-                
+
             padding: 20px;
             border-radius: 10px;
             /* Bordas arredondadas */
             color: blue;
             /* Texto azul */
-            margin-bottom: 30px; /* Espaçamento entre os blocos */
-            margin-left: auto; /* Alinha ao centro */
-            margin-right: auto; /* Alinha ao centro */
-            text-align: center; /* Alinha o texto ao centro */
-        }
-        .container a {
-            word-spacing: 10px; /* Espaçamento entre palavras */
+            margin-bottom: 30px;
+            /* Espaçamento entre os blocos */
+            margin-left: auto;
+            /* Alinha ao centro */
+            margin-right: auto;
+            /* Alinha ao centro */
+            text-align: center;
+            /* Alinha o texto ao centro */
         }
 
+        .container a {
+            word-spacing: 10px;
+            /* Espaçamento entre palavras */
+            color: aliceblue;
+        }
+
+        
 
         h1 {
             text-align: center;
             margin-top: 20px;
             color: white;
-            
+
         }
 
         .table {
