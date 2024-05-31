@@ -40,7 +40,7 @@
         }
 
         .container {
-
+            display: block;
             padding: 20px;
             border-radius: 10px;
             /* Bordas arredondadas */
@@ -67,7 +67,7 @@
         h1 {
             text-align: center;
             margin-top: 20px;
-            color: white;
+            color: blue;
 
         }
 
@@ -80,9 +80,18 @@
 
         .table th,
         .table td {
-            color: white;
+            color: blue;
             background-color: transparent;
             /* Fundo transparente para células */
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center; /* Alinha verticalmente os itens ao centro */
+            gap: 10px; /* Espaço entre os itens */
+        }
+        .form-label {
+            margin: 0; /* Remove a margem padrão do label */
         }
     </style>
 </head>

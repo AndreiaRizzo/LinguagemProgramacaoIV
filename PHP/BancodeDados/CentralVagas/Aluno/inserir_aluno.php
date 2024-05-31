@@ -34,11 +34,13 @@ require_once("../index.php");
 
     <div class="row mb-3">
         <div class="col">
-            <label for="dt_nasc" class="form-label">Data Nascimento</label>
-        </div>
-        <div class="col">
             <input type="date" class="form-control" name="dt_nasc">
         </div>
+        <div class="col">
+            <label for="dt_nasc" class="form-label">Data Nascimento: </label>
+
+        </div>
+
         <div class="col">
             <select class="form-select" name="idade" id="idade">
                 <option value="">Selecione a idade</option>
