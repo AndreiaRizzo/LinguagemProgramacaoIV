@@ -2,7 +2,7 @@
 require_once("../cabecalho.php");
 require_once("../index.php");
 ?>
-<h3>Dados Pessoais</h3>
+<h1>Dados Pessoais</h1>
 <form action="" method="POST">
 
 
@@ -11,22 +11,17 @@ require_once("../index.php");
             <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome aluno(a)">
         </div>
         <div class="col">
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="M" name="optradio" value="Masculino">
-                <label class="form-check-label" for="M">M</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="F" name="optradio" value="Feminino">
-                <label class="form-check-label" for="F">F</label>
-            </div>
+            <input type="text" class="form-control" name="cpfAluno" id="cpfAluno" placeholder="CPF Aluno">
         </div>
+
 
     </div>
 
     <div class="row mb-3">
         <div class="col">
-            <input type="text" class="form-control" name="cpfAluno" id="cpfAluno" placeholder="CPF Aluno">
+            <input type="text" class="form-control" name="celAluno" id="celAluno" placeholder="Celular Aluno">
         </div>
+
         <div class="col">
             <input type="text" class="form-control" name="email" id="email" placeholder="Email">
         </div>
@@ -34,13 +29,11 @@ require_once("../index.php");
 
     <div class="row mb-3">
         <div class="col">
-            <input type="date" class="form-control" name="dt_nasc">
+            <h3><label for="dt_nasc" class="form-label">Data Nascimento: </label></h3>
         </div>
         <div class="col">
-            <label for="dt_nasc" class="form-label">Data Nascimento: </label>
-
+            <input type="date" class="form-control" name="dt_nasc">
         </div>
-
         <div class="col">
             <select class="form-select" name="idade" id="idade">
                 <option value="">Selecione a idade</option>
@@ -58,6 +51,20 @@ require_once("../index.php");
                 <option value="17">17 anos</option>
                 <option value="18">18 anos</option>
             </select>
+        </div>
+        <div class="col">
+            <div class="radio">
+                <div class="col">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="M" name="optradio" value="Masculino">
+                        <label class="form-check-label" for="M">M</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="F" name="optradio" value="Feminino">
+                        <label class="form-check-label" for="F">F</label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -91,7 +98,7 @@ require_once("../index.php");
 
     <div class="row mb-3">
         <div class="col">
-            <button type="submit" class="btn btn-success mt-3">Salvar</button>
+            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
         </div>
     </div>
 </form>

@@ -15,10 +15,10 @@
         }
     }
 
-    function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp){
+    function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno){
         try{
             $sql = "INSERT INTO  Aluno (cpfAluno, nome, dtNasc, idade, sexo, rua, num, cidade, estado, email, nomeResp, celResp)
-            VALUES (:cpfAluno,:nome, :dtNasc, :idade, :sexo, :rua, :num, :cidade, :estado, :email, :nomeResp, :celResp)";
+            VALUES (:cpfAluno,:nome, :dtNasc, :idade, :sexo, :rua, :num, :cidade, :estado, :email, :nomeResp, :celResp, :celAluno)";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(":cpfAluno", $cpfAluno);
@@ -32,7 +32,8 @@
             $stmt->bindValue(":estado", $estado);
             $stmt->bindValue(":email", $email);
             $stmt->bindValue(":nomeResp", $nomeResp);
-            $stmt->bindValue(":celResp", $celResp);            
+            $stmt->bindValue(":celResp", $celResp);
+            $stmt->bindValue(":celAluno", $celAluno);            
             return $stmt->execute();
         } catch (Exception $e){
             return 0;

@@ -2,7 +2,7 @@
 require_once("../cabecalho.php");
 require_once("../index.php");
 ?>
-<h1>Excluir Cadastro</h1>
+<h1>CONCLUIR MATRÍCULA</h1>
 <form>
 
     <table class="table table-borderless">
@@ -30,10 +30,19 @@ require_once("../index.php");
         </tbody>
     </table>
 
+    <div class="row mb-3">
+    <div class="col">
+            <h3><label for="dt_nasc" class="form-label">Matrícula efetuada em:  </label></3>
+
+        </div>
+        <div class="col">
+            <input type="date" class="form-control" name="matr_concluida">
+        </div>
+        
+    </div>
     <div class="row">
         <div class="col">
-            <h4><p class="mt-4">Deseja realmente Excluir?</p></h4>
-            <button type="submit" class="btn btn-primary mt-3">Excluir</button>
+            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
         </div>
     </div>
 </form>

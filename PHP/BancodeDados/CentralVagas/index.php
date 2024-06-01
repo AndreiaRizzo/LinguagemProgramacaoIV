@@ -62,12 +62,20 @@
             color: aliceblue;
         }
 
-        
+
 
         h1 {
             text-align: center;
             margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
             color: blue;
+            text-transform: uppercase;
+            /* Tudo em maiúsculas */
+            letter-spacing: 2px;
+            /* Espaçamento entre letras */
+            font-weight: bold;
+            /* Negrito */
 
         }
 
@@ -81,17 +89,20 @@
         .table th,
         .table td {
             color: blue;
-            background-color: transparent;
-            /* Fundo transparente para células */
+            background-color: transparent; /* Fundo transparente para células */
         }
 
         .form-group {
             display: flex;
             align-items: center; /* Alinha verticalmente os itens ao centro */
             gap: 10px; /* Espaço entre os itens */
-        }
-        .form-label {
-            margin: 0; /* Remove a margem padrão do label */
+        }       
+
+        .radio {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+            justify-content: center;/* Centraliza verticalmente */
         }
     </style>
 </head>
