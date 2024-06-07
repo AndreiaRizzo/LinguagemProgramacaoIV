@@ -14,6 +14,7 @@
             return 0;
         }
     }
+    
     function retornarProdutos(){
         try{
            $sql = "SELECT p.*, c.descricao as categoria FROM produto p INNER JOIN categoria c ON c.id = p.Categoria_id";
