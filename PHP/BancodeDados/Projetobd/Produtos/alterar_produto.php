@@ -1,43 +1,73 @@
 <?php
-    require_once("../cabecalho.php");
+require_once("../cabecalho.php");
+if (isset($_GET['id'])) {
+    $id = $_GET['id']; //método get vai mostrar na tela os dados do banco
+    session_start();
+    $_SESSION['id'] = $id;
+}
+
+if ($_POST) {
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $valor = $_POST['valor'];
+    $categoria = $_POST['categoria'];
+    if ($nome != "" && $descricao != "" && $valor != "" && $categoria != "") {
+        session_start();
+        if (alterarProduto($nome, $descricao, $valor, $categoria, $_SESSION['id']))
+            echo "Registro alterado com sucesso!";
+        else
+            echo "Erro ao alterar o registro!";
+    } else {
+        echo "Preencha todos os campos!";
+    }
+}
+$dados = consultarProdutoId($id); //variável vai receber todos os dados desse id que está no banco de dados
+
 ?>
-    <h3>Alterar Produto</h3>
-    <form>
-        <div class="row">
-            <div class="col">
-                <label for="nome" class="form-label">Informe o nome</label>
-                <input type="text" class="form-control" name="nome">
-            </div>
+<h3>Alterar Produto</h3>
+<form action="" method="POST">
+    <div class="row">
+        <div class="col">
+            <label for="nome" class="form-label">Informe o nome</label>
+            <input type="text" class="form-control" name="nome" value="<?= $dados['nome'] ?>">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="descricao" class="form-label">Informe a descrição</label>
-                <input type="text" class="form-control" name="descricao">
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="descricao" class="form-label">Informe a descrição</label>
+            <input type="text" class="form-control" name="descricao" value="<?= $dados['descricao'] ?>">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="valor" class="form-label">Informe o valor</label>
-                <input type="text" class="form-control" name="valor">
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="valor" class="form-label">Informe o valor</label>
+            <input type="text" class="form-control" name="valor" value="<?= $dados['valor'] ?>">
         </div>
-        <div class="row">
-            <div class="col">
-                <label for="categoria" class="form-label">Selecione a categoria</label>
-                <select class="form-select" name="categoria">
-                    <option value="1">Categoria 1</option>
-                    <option value="2">Categoria 2</option>
-                    <option value="3">Categoria 3</option>
-                </select>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="categoria" class="form-label">Selecione a categoria</label>
+            <select class="form-select" name="categoria">
+                <?php
+                $linhas = retornarCategorias();
+                while ($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
+                    if ($l['id'] == $dados["Categoria_id"])
+                        echo "<option selected value='{$l['id']}'>{$l['descricao']}</option>";
+                    else
+                        echo "<option value='{$l['id']}'>{$l['descricao']}</option>";
+                }
+                ?>
+            </select>
         </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-success mt-3">Salvar</button>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-success mt-3">Salvar</button>
         </div>
-    </form>
+    </div>
+</form>
 
 
 <?php
-    require_once("../rodape.html");
+
+require_once("../rodape.html");

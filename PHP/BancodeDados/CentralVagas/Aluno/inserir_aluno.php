@@ -1,6 +1,6 @@
 <?php
 require_once("../cabecalho.php");
-require_once("../index.php");
+require_once("../style.html");
 ?>
 <h1>Dados Pessoais</h1>
 <form action="" method="POST">
@@ -29,10 +29,10 @@ require_once("../index.php");
 
     <div class="row mb-3">
         <div class="col">
-            <h3><label for="dt_nasc" class="form-label">Data Nascimento: </label></h3>
+            <h3><label for="dtNasc" class="form-label">Data Nascimento: </label></h3>
         </div>
         <div class="col">
-            <input type="date" class="form-control" name="dt_nasc">
+            <input type="date" class="form-control" name="dtNasc">
         </div>
         <div class="col">
             <select class="form-select" name="idade" id="idade">
@@ -56,11 +56,11 @@ require_once("../index.php");
             <div class="radio">
                 <div class="col">
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="M" name="optradio" value="Masculino">
+                        <input type="radio" class="form-check-input" id="sexoM" name="sexo" value="M">
                         <label class="form-check-label" for="M">M</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="F" name="optradio" value="Feminino">
+                        <input type="radio" class="form-check-input" id="sexoF" name="sexo" value="F">
                         <label class="form-check-label" for="F">F</label>
                     </div>
                 </div>
@@ -105,4 +105,35 @@ require_once("../index.php");
 
 
 <?php
+if ($_POST) {
+    $nome = $_POST['nome'];
+    $cpfAluno = $_POST['cpfAluno'];
+    $dtNasc = $_POST['dtNasc'];
+    $idade = $_POST['idade'];
+    $sexo = $_POST['sexo'];
+    $rua = $_POST['rua'];
+    $num = $_POST['num'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+    $email = $_POST['email'];
+    $nomeResp = $_POST['nomeResp'];
+    $celResp = $_POST['celResp'];
+    $celAluno = $_POST['celAluno'];
+    if ($nome != "" &&  $cpfAluno != "" && $dtNasc != "" && $idade != "" && $sexo != "" &&   $rua != "" &&  
+    $num != "" &&   $cidade != "" &&   $estado != "" &&  $email != "" &&   $nomeResp != "" &&  $celResp != "" &&   $celAluno!= ""  ) {
+        if (inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno))
+            echo "Registro inserido com sucesso!";
+        else
+            echo "Erro ao inserir o registro!";
+        
+    } else {
+        echo "Preencha todos os campos!";
+    }
+}
 require_once("../rodape.php");
+
+
+   
+     
+    
+    
