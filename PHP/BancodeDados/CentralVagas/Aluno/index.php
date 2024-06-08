@@ -1,6 +1,6 @@
 <?php
 require_once("../cabecalho.php");
-require_once("../index.php");
+require_once("../style.html");
 ?>
 
 <h1>ESCOLHA A OPÇÃO DESEJADA</h1>

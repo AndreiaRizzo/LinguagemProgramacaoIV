@@ -1,5 +1,6 @@
 <?php
     require_once("cabecalho.php");
+    require_once("style.html");
 ?>
 
     <h1>Central de vagas</h1>

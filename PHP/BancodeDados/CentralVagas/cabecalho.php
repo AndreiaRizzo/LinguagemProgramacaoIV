@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/LinguagemProgramacaoIV/PHP/BancodeDados/CentralVagas/Aluno/index.php/">Cadastrar Aluno</a>
+            <a class="nav-link" href="#">Cadastrar Aluno</a>
           </li>
         </ul>
       </div>
@@ -28,7 +28,6 @@
     <?php
 
     require_once('funcao.php');
-    if(conectarBanco()){
+    if (conectarBanco()) {
       echo "Conexão realizada com sucesso!";
     }
-
