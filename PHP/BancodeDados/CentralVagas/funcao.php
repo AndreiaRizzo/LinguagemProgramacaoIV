@@ -39,3 +39,16 @@
             return 0;
         }
     }
+
+    function excluirAluno( $cpfAluno)
+{
+    try {
+        $sql = "DELETE FROM aluno WHERE cpfAluno = :cpfAluno";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue("cpfAluno" , $cpfAluno);
+        return $stmt->execute();
+    } catch (Exception $e) {
+        return 0;
+    }
+}
