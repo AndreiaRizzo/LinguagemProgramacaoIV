@@ -72,7 +72,7 @@ function alterarProduto($nome, $descricao, $valor, $categoria, $id)
         return 0;
     }
 }
-function excluirProduto( $id)
+function excluirProduto($id)
 {
     try {
         $sql = "DELETE FROM produto WHERE id = :id";
