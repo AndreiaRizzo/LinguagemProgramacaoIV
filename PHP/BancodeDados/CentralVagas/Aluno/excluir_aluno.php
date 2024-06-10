@@ -9,24 +9,18 @@ if (isset($_GET['cpfAluno'])) {
 }
 
 if ($_POST) {
-    $cpfAluno = $_SESSION['cpfAluno'];
-    if (excluirAluno($_SESSION['cpfAluno'])) {
 
-        header('Location: index.php');
-        exit();
-    } else {
-        echo "Erro ao excluir o registro!";
+    $cpfAluno = $_POST['cpfAluno'];
+    echo "CPF $cpfAluno excluido com sucesso";
     }
-}
-
-
-$dados = consultarAluno($cpfAluno); //variável vai receber todos os dados desse id que está no banco de dados
+       
+$dados = retornarAluno(); //variável vai receber todos os dados desse id que está no banco de dados
 
 
 ?>
 <h1>Excluir Cadastro</h1>
 
-<form action="excluir_aluno.php" method="POST">
+<form action="" method="POST">
     <table class="table table-borderless">
         <thead>
             <tr>
@@ -41,10 +35,7 @@ $dados = consultarAluno($cpfAluno); //variável vai receber todos os dados desse
                         <?php
                         $linhas = retornarAluno();
                         while ($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
-                            if ($l['cpfAluno'] == $dados["cpfAluno"])
-                                echo "<option selected value='{$l['cpfAluno']}'>{$l['nome']}</option>";
-                            else
-                                echo "<option value='{$l['cpfAluno']}>{$l['nome']}</option>";
+                            echo "<option value='{$l['cpfAluno']}'>{$l['nome']} - {$l['cpfAluno']}</option>";
                         }
                         ?>
                     </select>
@@ -58,7 +49,7 @@ $dados = consultarAluno($cpfAluno); //variável vai receber todos os dados desse
     <div class="row">
         <div class="col">
             <label for="text">Deseja realmente excluir?</label>
-           
+
             <input type="submit" class="btn btn-primary mt-3" value="Excluir" name="btnExcluir>
         </div>
     </div>
