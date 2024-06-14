@@ -1,11 +1,10 @@
 <?php
 require_once "../cabecalho.php";
 ?>
-
-<form action="exer01resp.php" method="post">
+<form action="exer07resp.php" method="post">
     <div class="row">
         <div class="col">
-            <label for="valor" class="form-label">Informe o valor</label>
+            <label for="valor" class="form-label">Informe uma medida em metros</label>
             <input type="number" class="form-control" name="valor" id="valor">
         </div>
 
@@ -18,6 +17,11 @@ require_once "../cabecalho.php";
         </div>
     </div>
 </form>
+
+
+
+
+
 
 <?php
 require_once "../rodape.php";

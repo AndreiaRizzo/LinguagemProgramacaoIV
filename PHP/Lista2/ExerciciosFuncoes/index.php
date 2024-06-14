@@ -17,20 +17,10 @@ function positivoNegativo($valor)
     }
 }
 
-function encontrarMenor($valores)
-{
-    $menor = $valores[0];
-    $pos = 1;
 
-    foreach ($valores as $index => $valor) {
-        if ($valor < $menor) {
-            $menor = $valor;
-            $pos = $index + 1;
-        }
-    }
 
-    echo "<p> $menor é o menor valor da relação e ocupa a posição $pos.</p>";
-}
+
+
 
 
 function encontrarTriplo($valor1, $valor2)
@@ -65,8 +55,6 @@ function encontrarFatorial($valor)
     return $resultado;
 }
 
-
-
 function encontrarIguais($valor1, $valor2)
 {
     $resultado = "";
@@ -82,33 +70,16 @@ function encontrarIguais($valor1, $valor2)
 
 function converterCentimetros($valor)
 {
+
     $centimetro = $valor * 100;
     return $centimetro;
 }
 
 function calcularCusto($area)
 {
+
     $tintaLitro = $area / 3;
     $latas = ceil($tintaLitro / 18);
     $precoTotal = $latas * 80;
-    return ["latas" => $latas, "precoTotal" => $precoTotal];
-}
-
-function calcularIdade($anoNasc)
-{
-    $anoAtual = date('Y');
-    $idadeAtual = $anoAtual - $anoNasc;
-    $idade2025 = 2025 - $anoNasc;
-    $diasVividos = $idadeAtual * 365;
-
-    return [
-        'idadeAtual' => $idadeAtual,
-        'idade2025' => $idade2025,
-        'diasVividos' => $diasVividos
-    ];
-}
-
-function calcularImc($peso, $altura) {
-    $imc = $peso / ($altura * $altura);
-    return round($imc, 2);
+    return $precoTotal;
 }
