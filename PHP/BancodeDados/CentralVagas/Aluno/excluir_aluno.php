@@ -8,12 +8,16 @@ if (isset($_GET['cpfAluno'])) {
     $_SESSION['cpfAluno'] = $cpfAluno;
 }
 
-if ($_POST) {
-
+if ($_POST && isset($_POST['btnExcluir'])) {
     $cpfAluno = $_POST['cpfAluno'];
-    echo "CPF $cpfAluno excluido com sucesso";
+
+    if (excluirAluno($cpfAluno)) {
+        echo "CPF $cpfAluno excluído com sucesso";
+    } else {
+        echo "Erro ao excluir o CPF $cpfAluno";
     }
-       
+}
+
 $dados = retornarAluno(); //variável vai receber todos os dados desse id que está no banco de dados
 
 
@@ -50,7 +54,7 @@ $dados = retornarAluno(); //variável vai receber todos os dados desse id que es
         <div class="col">
             <label for="text">Deseja realmente excluir?</label>
 
-            <input type="submit" class="btn btn-primary mt-3" value="Excluir" name="btnExcluir>
+            <input type="submit" class="btn btn-primary mt-3" value="Excluir" name="btnExcluir">
         </div>
     </div>
 </form>
