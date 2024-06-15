@@ -21,7 +21,7 @@ function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cid
 {
     $conexao = conectarBanco();
     try {
-        $sql = "INSERT INTO alunos (cpfAluno, nome, dtNasc, idade, sexo, rua, num, cidade, estado, email, nomeResp, celResp, celAluno, idCurso) VALUES (:cpfAluno, :nome, :dtNasc, :idade, :sexo, :rua, :num, :cidade, :estado, :email, :nomeResp, :celResp, :celAluno, :idCurso)";
+        $sql = "INSERT INTO aluno (cpfAluno, nome, dtNasc, idade, sexo, rua, num, cidade, estado, email, nomeResp, celResp, celAluno) VALUES (:cpfAluno, :nome, :dtNasc, :idade, :sexo, :rua, :num, :cidade, :estado, :email, :nomeResp, :celResp, :celAluno)";
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(':cpfAluno', $cpfAluno);
         $stmt->bindValue(':nome', $nome);
@@ -36,11 +36,15 @@ function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cid
         $stmt->bindValue(':nomeResp', $nomeResp);
         $stmt->bindValue(':celResp', $celResp);
         $stmt->bindValue(':celAluno', $celAluno);
-        $stmt->bindValue(':idCurso', $idCurso);
-
-        return $stmt->execute();
+        if ($stmt->execute()){
+            /*if(inserirNaListaEspera($cpfAluno, $idCurso, date("Y-m-d")))
+                return true;
+            else
+                return false;*/
+                inserirNaListaEspera($cpfAluno, $idCurso, date("Y-m-d"));
+        }
     } catch (PDOException $e) {
-        error_log("Erro ao inserir aluno: " . $e->getMessage());
+        echo "Erro ao inserir aluno: " . $e->getMessage();
         return false;
     }
 }
@@ -48,11 +52,19 @@ function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cid
 function excluirAluno($cpfAluno)
 {
     try {
-        $sql = "DELETE FROM aluno WHERE cpfAluno = :cpfAluno";
+        $resultado = 0;
+        $sql = "DELETE FROM listaespera WHERE aluno_cpfAluno = :cpfAluno";
         $conexao = conectarBanco();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":cpfAluno", $cpfAluno);
-        return $stmt->execute();
+        if ($stmt->execute()){
+            $sql = "DELETE FROM aluno WHERE cpfAluno = :cpfAluno";
+            $conexao = conectarBanco();
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(":cpfAluno", $cpfAluno);
+            $resultado = $stmt->execute();
+        }
+        return $resultado;
     } catch (Exception $e) {
         return 0;
     }
@@ -106,19 +118,19 @@ function removerDaListaEspera($cpfAluno)
     }
 }
 
-function inserirNaListaEspera($cpfAluno, $nome, $curso, $dtCadastro)
+function inserirNaListaEspera($cpfAluno, $curso, $dtCadastro)
 {
     $conexao = conectarBanco();
     try {
-        $sql = "INSERT INTO listaespera (cpfAluno, nome, curso, dtCadastro) VALUES (:cpfAluno, :nome, :curso, :dtCadastro)";
+        $sql = "INSERT INTO listaespera (aluno_cpfAluno, cursos_idCurso, dtCadastro) VALUES (:cpfAluno, :curso, :dtCadastro)";
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(':cpfAluno', $cpfAluno);
-        $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':curso', $curso);
         $stmt->bindValue(':dtCadastro', $dtCadastro);
-        return $stmt->execute();
+        $stmt->execute();
+        return true;
     } catch (PDOException $e) {
-        error_log("Erro ao inserir na lista de espera: " . $e->getMessage());
+        echo "Erro ao inserir na lista de espera: " . $e->getMessage();
         return false;
     }
 }

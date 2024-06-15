@@ -22,10 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idCurso = $_POST['idCurso'];
 
     if ($nome != "" && $cpfAluno != "" && $dtNasc != "" && $idade != "" && $sexo != "" && $rua != "" && $num != "" && $cidade != "" && $estado != "" && $email != "" && $nomeResp != "" && $celResp != "" && $celAluno != "" && $idCurso != "") {
-        if (inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno, $idCurso))
-            echo "<div class='alert alert-success'>Registro inserido com sucesso!</div>";
-        else
-            echo "<div class='alert alert-danger'>Erro ao inserir o registro!</div>";
+        inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno, $idCurso);
+        echo "<div class='alert alert-success'>Registro inserido com sucesso!</div>";
+        
     } else {
         echo "<div class='alert alert-warning'>Preencha todos os campos!</div>";
     }
