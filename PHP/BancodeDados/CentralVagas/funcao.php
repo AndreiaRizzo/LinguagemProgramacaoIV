@@ -36,12 +36,8 @@ function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cid
         $stmt->bindValue(':nomeResp', $nomeResp);
         $stmt->bindValue(':celResp', $celResp);
         $stmt->bindValue(':celAluno', $celAluno);
-        if ($stmt->execute()){
-            /*if(inserirNaListaEspera($cpfAluno, $idCurso, date("Y-m-d")))
-                return true;
-            else
-                return false;*/
-                inserirNaListaEspera($cpfAluno, $idCurso, date("Y-m-d"));
+        if ($stmt->execute()) {
+            inserirNaListaEspera($cpfAluno, $idCurso, date("Y-m-d"));
         }
     } catch (PDOException $e) {
         echo "Erro ao inserir aluno: " . $e->getMessage();
@@ -57,7 +53,7 @@ function excluirAluno($cpfAluno)
         $conexao = conectarBanco();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":cpfAluno", $cpfAluno);
-        if ($stmt->execute()){
+        if ($stmt->execute()) {
             $sql = "DELETE FROM aluno WHERE cpfAluno = :cpfAluno";
             $conexao = conectarBanco();
             $stmt = $conexao->prepare($sql);
@@ -148,4 +144,3 @@ function retornarAlunosListaEspera()
         return [];
     }
 }
-?>
