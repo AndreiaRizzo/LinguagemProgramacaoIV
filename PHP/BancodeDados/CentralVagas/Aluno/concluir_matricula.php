@@ -1,10 +1,40 @@
 <?php
 require_once("../cabecalho.php");
 require_once("../style.html");
-?>
-<h1>CONCLUIR MATRÍCULA</h1>
-<form>
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $cpfAluno = $_POST['cpfAluno'];
+    $idCurso = $_POST['idCurso'];
+
+    if (inserirMatricula($cpfAluno, $idCurso)) {
+        if (removerDaListaEspera($cpfAluno)) {
+            echo "<div class='alert alert-success'>Matrícula concluída com sucesso!</div>";
+        } else {
+            echo "<div class='alert alert-danger'>Erro ao remover da lista de espera!</div>";
+        }
+    } else {
+        echo "<div class='alert alert-danger'>Erro ao concluir matrícula!</div>";
+    }
+}
+
+// Recuperar cursos do banco de dados
+$cursos = [];
+try {
+    $sql = "SELECT idCurso, nomeCur FROM cursos";
+    $conexao = conectarBanco();
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "<div class='alert alert-danger'>Erro ao buscar cursos: " . $e->getMessage() . "</div>";
+}
+
+// Recuperar alunos da lista de espera do banco de dados ordenados por curso
+$alunos = retornarAlunosListaEspera();
+?>
+
+<h1>CONCLUIR MATRÍCULA</h1>
+<form action="" method="post">
     <table class="table table-borderless">
         <thead>
             <tr>
@@ -12,34 +42,22 @@ require_once("../style.html");
             </tr>
         </thead>
         <tbody>
-            <form action="processar_selecao.php" method="post">
-                <tr>
-                    <td>
-                        <select name="cpfAluno" class="form-select">
-                            <?php
-                            $linhas = retornarAluno();
-                            while ($l = $linhas->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value='{$l['cpfAluno']}'>{$l['nome']} - {$l['cpfAluno']}</option>";
-                            }
-                            ?>
-                        </select>
-                    </td>
-
-                </tr>
-            </form>
+            <tr>
+                <td>
+                    <select name="cpfAluno" class="form-select" required>
+                        <option value="">Selecione um aluno</option>
+                        <?php
+                        foreach ($alunos as $aluno) {
+                            echo "<option value='{$aluno['cpfAluno']}'>{$aluno['nome']} - {$aluno['cpfAluno']}</option>";
+                        }
+                        ?>
+                    </select>
+                </td>
+            </tr>
         </tbody>
     </table>
 
-    <div class="row mb-3">
-    <div class="col">
-            <h3><label for="dt_nasc" class="form-label">Matrícula efetuada em:  </label></3>
 
-        </div>
-        <div class="col">
-            <input type="date" class="form-control" name="matr_concluida">
-        </div>
-        
-    </div>
     <div class="row">
         <div class="col">
             <button type="submit" class="btn btn-primary mt-3">Salvar</button>
@@ -47,6 +65,6 @@ require_once("../style.html");
     </div>
 </form>
 
-
 <?php
 require_once("../rodape.php");
+?>

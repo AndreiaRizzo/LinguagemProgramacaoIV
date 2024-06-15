@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.php");
 require_once("../style.html");
-require_once("../funcao.php");
+
 
 $conexao = conectarBanco();
 
@@ -19,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nomeResp = $_POST['nomeResp'];
     $celResp = $_POST['celResp'];
     $celAluno = $_POST['celAluno'];
-    $cursoId = $_POST['cursoId'];
+    $idCurso = $_POST['idCurso'];
 
-    if ($nome != "" && $cpfAluno != "" && $dtNasc != "" && $idade != "" && $sexo != "" && $rua != "" && $num != "" && $cidade != "" && $estado != "" && $email != "" && $nomeResp != "" && $celResp != "" && $celAluno != "" && $cursoId != "") {
-        if (inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno, $cursoId))
+    if ($nome != "" && $cpfAluno != "" && $dtNasc != "" && $idade != "" && $sexo != "" && $rua != "" && $num != "" && $cidade != "" && $estado != "" && $email != "" && $nomeResp != "" && $celResp != "" && $celAluno != "" && $idCurso != "") {
+        if (inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cidade, $estado, $email, $nomeResp, $celResp, $celAluno, $idCurso))
             echo "<div class='alert alert-success'>Registro inserido com sucesso!</div>";
         else
             echo "<div class='alert alert-danger'>Erro ao inserir o registro!</div>";
@@ -135,7 +135,7 @@ try {
     <!-- Novo campo para selecionar o curso -->
     <div class="row mb-3">
         <div class="col">
-            <select class="form-select" name="cursoId" id="cursoId" required>
+            <select class="form-select" name="idCurso" id="idCurso" required>
                 <option value="">Selecione um curso</option>
                 <?php foreach ($cursos as $curso) : ?>
                     <option value="<?php echo $curso['idCurso']; ?>"><?php echo $curso['nomeCur']; ?></option>
