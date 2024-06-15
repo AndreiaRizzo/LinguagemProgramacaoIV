@@ -42,19 +42,7 @@ function inserirAluno($cpfAluno, $nome, $dtNasc, $idade, $sexo, $rua, $num, $cid
         return 0;
     }
 }
-function consultarAluno($cpfAluno)
-{
-    try {
-        $sql = "SELECT * FROM aluno WHERE cpfAluno = :cpfAluno";
-        $conexao = conectarBanco();
-        $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":cpfAluno", $cpfAluno);
-        $stmt->execute();
-        return $stmt->fetch();
-    } catch (Exception $e) {
-        return 0;
-    }
-}
+
 
 function excluirAluno($cpfAluno)
 {
@@ -67,5 +55,20 @@ function excluirAluno($cpfAluno)
         return $stmt->execute();
     } catch (Exception $e) {
         return 0;
+    }
+}
+function consultarAluno($cpfAluno)
+{
+    try {
+
+        $sql = "SELECT * FROM aluno WHERE cpfAluno = :cpfAluno";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(':cpfAluno', $cpfAluno);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Erro ao consultar aluno: " . $e->getMessage();
+        return false;
     }
 }
